@@ -13,7 +13,10 @@
       },
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [-480, 208],
+      "position": [
+        -496,
+        208
+      ],
       "id": "1564d84f-939a-4037-aaee-262ad4f82fde",
       "name": "Schedule Trigger"
     },
@@ -43,7 +46,10 @@
       },
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
-      "position": [-48, 208],
+      "position": [
+        -48,
+        208
+      ],
       "id": "5c4fd323-b2e8-45dd-ad65-fe2b6fca4b86",
       "name": "Filter by Status"
     },
@@ -70,7 +76,9 @@
             "Status": "Called",
             "Name": "={{ $json.Name }}"
           },
-          "matchingColumns": ["Name"],
+          "matchingColumns": [
+            "Name"
+          ],
           "schema": [
             {
               "id": "Name",
@@ -146,7 +154,10 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [400, 208],
+      "position": [
+        400,
+        208
+      ],
       "id": "d8843cfb-6602-4f41-90c4-575627aac3b8",
       "name": "Update Status",
       "credentials": {
@@ -158,64 +169,49 @@
     },
     {
       "parameters": {
-        "content": "## Add Your CRM here ",
-        "height": 300,
+        "content": "## Add Your CRM here \nHere you can add your CRM i.e Hubspot, ZOHO, SalesForce etc whichever provides API key\n\nHere we are using Google Sheet as FREE CRM.",
+        "height": 316,
         "width": 260
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [-336, 96],
+      "position": [
+        -336,
+        16
+      ],
       "id": "954be2a9-4a6a-49b0-bd93-3ff3c7c3dd74",
       "name": "Sticky Note"
     },
     {
       "parameters": {
-        "content": "## Add Your AI Agent Credentials Here",
-        "height": 344,
+        "content": "## Add Your AI Agent Credentials Here\nWe need top Add Retell AI (https://www.retellai.com/ ) Credentials here including API key, Retell AI Agent ID & Dialling Number.",
+        "height": 392,
         "width": 260,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [96, 48],
+      "position": [
+        96,
+        0
+      ],
       "id": "899b54c5-4e60-4d49-8351-6f1c51705c33",
       "name": "Sticky Note1"
     },
     {
       "parameters": {
-        "content": "## Calling Trigger",
+        "content": "## Calling Trigger\nSetup Suitable Time for \nthe automation to make calls.",
         "width": 352,
         "color": 6
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [-704, 192],
+      "position": [
+        -720,
+        192
+      ],
       "id": "dbe10d22-1f66-41e4-946f-c90fb8a82c37",
       "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.retellai.com/v2/create-phone-call",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer key_2527bc25e2d35063340388d0f347"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"from_number\": \"+17855723991\",\n  \"to_number\": \"{{ $json.Phone }}\",\n  \"override_agent_id\": \"agent_b7878baf83e5aef86c06cec698\",\n  \"override_agent_version\": 1,\n  \"metadata\": {},\n  \"retell_llm_dynamic_variables\": {\n    \"Name\": \"{{ $json.Name }}\",\n    \"Interests\": \"{{ $json.Interests }}\",\n    \"Budget\": \"{{ $json.Budget }}\",\n    \"Type\": \"{{ $json.Type }}\",\n    \"Location\": \"{{ $json.Location }}\",\n    \"Developer\": \"{{ $json.Developer }}\"\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [176, 208],
-      "id": "49d80704-ec5b-4e52-a80a-1755321b20ee",
-      "name": "Retell AI Credentials"
     },
     {
       "parameters": {
@@ -237,7 +233,10 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [-272, 208],
+      "position": [
+        -272,
+        208
+      ],
       "id": "3686e227-a11b-4140-add6-1e625fe4bf16",
       "name": "CRM",
       "credentials": {
@@ -246,6 +245,49 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "content": "## Devmate Solutions\nFor Custom AI Call Assistant For You Clients or yourself, Contact Now:\nmanagement@devmatesolutions.com\n\nOr Visit our Website:\nwww.devmatesolutions.com",
+        "height": 192,
+        "width": 352,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -704,
+        -80
+      ],
+      "id": "e44f52d1-8880-4f98-a93f-5e1919b56882",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_2527bc25e2d35063340388d0f347"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from_number\": \"+17855723991\",\n  \"to_number\": \"{{ $json.Phone }}\",\n  \"override_agent_id\": \"agent_b7878baf83e5aef86c06cec698\",\n  \"override_agent_version\": 1,\n  \"metadata\": {},\n  \"retell_llm_dynamic_variables\": {\n    \"Name\": \"{{ $json.Name }}\",\n    \"Interests\": \"{{ $json.Interests }}\",\n    \"Budget\": \"{{ $json.Budget }}\",\n    \"Type\": \"{{ $json.Type }}\",\n    \"Location\": \"{{ $json.Location }}\",\n    \"Developer\": \"{{ $json.Developer }}\"\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        176,
+        208
+      ],
+      "id": "49d80704-ec5b-4e52-a80a-1755321b20ee",
+      "name": "Retell AI Credentials"
     }
   ],
   "pinData": {},
@@ -272,22 +314,22 @@
         ]
       ]
     },
-    "Retell AI Credentials": {
+    "CRM": {
       "main": [
         [
           {
-            "node": "Update Status",
+            "node": "Filter by Status",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "CRM": {
+    "Retell AI Credentials": {
       "main": [
         [
           {
-            "node": "Filter by Status",
+            "node": "Update Status",
             "type": "main",
             "index": 0
           }
@@ -300,7 +342,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "a002e064-ecd1-43f7-a66e-6401d51f6efe",
+  "versionId": "7a0d6617-588c-4dc0-80e3-b998cfce002a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "4529b27cd2b96792fae7c8568790f198703d3641cb131f0251cf62b216c47d86"
